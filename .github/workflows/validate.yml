@@ -1,0 +1,21 @@
+name: Validate stations.json
+
+on:
+  pull_request:
+    paths:
+      - stations.json
+      - stations.schema.json
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm install -g ajv-cli ajv-formats
+
+      - run: ajv validate -s stations.schema.json -d stations.json --spec=draft2020 -c ajv-formats
