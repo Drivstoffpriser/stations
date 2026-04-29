@@ -28,7 +28,7 @@
             "osm_id": {
                 "type": [
                     "string",
-                    "null"
+                    null
                 ],
                 "description": "OpenStreetMap ID. Null if not on OpenStreetMap yet",
                 "examples": [
