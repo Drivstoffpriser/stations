@@ -33,7 +33,7 @@
                 "description": "OpenStreetMap ID. Null if not on OpenStreetMap yet",
                 "examples": [
                     "7633012856",
-                    null
+                    "null"
                 ]
             },
             "brand": {
@@ -41,7 +41,9 @@
                 "enum": [
                     "AUTOMAT_1",
                     "AUTON",
+                    "BECK_OLJESENTER",
                     "BEST",
+                    "BILXTRA",
                     "BONDETANKEN",
                     "BUNKER_OIL",
                     "BUSKERUD_OLJE",
@@ -54,28 +56,36 @@
                     "ENGENS_OLJESENTER",
                     "ESSO",
                     "FINA",
+                    "FINSLAND_BENSIN",
+                    "FLORO_BIL_OG_HAVNESERVICE",
                     "FUEL4U",
+                    "HALSOIL",
                     "HALTBAKK_EXPRESS",
                     "HAUGALAND_OLJE",
                     "HELGELAND_OLJESERVICE",
                     "HERNES_OLJESENTER",
+                    "INDEPENDENT",
+                    "JOKER",
                     "KNAPPHUS",
                     "KOTSOY_NAERINGSBYGG",
                     "LESJA_INNKJOPSLAG",
+                    "LONGVA_SERVICESENTER",
                     "LYSE",
                     "MATKROKEN",
                     "MAX",
+                    "MESNALI_BENSIN",
                     "MINOL",
                     "MH24",
-                    "NARBUTIKKEN",
-                    "INDEPENDENT",
-                    "JOKER",
+                    "MOE_MASKIN_OG_TRANSPORT,
+                    "NORSK_OLJE",
+                    "NAERBUTIKKEN",
                     "KNARREN",
                     "OLJELEVERANDOREN",
                     "PREEM",
                     "STEIGEN_OLJESERVICE",
                     "ST1",
-                    "TANKGSTAD_TRANSPORT",
+                    "SVALBARD_AUTO",
+                    "TANGSTAD_TRANSPORT",
                     "TANK",
                     "TANKEN",
                     "TOFTE_TANKTRANSPORT",
@@ -147,6 +157,35 @@
                         "DIESEL"
                     ]
                 ]
+            }
+            "external_id": {
+                "type": "object",
+                "description": "Reference ID to another source than OSM",
+                "required": [
+                  "id",
+                  "source"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "The ID in the external system",
+                    "examples": [
+                      "100115738nb",
+                      "best-farstad-automat-10400626"
+                    ]
+                  },
+                  "source": {
+                    "type": "string",
+                    "description": "The external system this ID belongs to",
+                    "enum": [
+                      "circlek",
+                      "esso",
+                      "tronder",
+                      "yx"
+                    ]
+                  }
+                }
             }
         }
     }
