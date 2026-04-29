@@ -33,7 +33,7 @@
                 "description": "OpenStreetMap ID. Null if not on OpenStreetMap yet",
                 "examples": [
                     "7633012856",
-                    "null"
+                    null
                 ]
             },
             "brand": {
